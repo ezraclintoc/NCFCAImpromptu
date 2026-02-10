@@ -61,14 +61,14 @@ const App = () => {
 
     useEffect(() => {
         if (cookieConsent === 'essential' || cookieConsent === 'all') {
-            Cookies.set('settings', JSON.stringify(settings), { expires: 365 });
-            Cookies.set('selectedDataset', selectedDataset, { expires: 365 });
+            Cookies.set('settings', JSON.stringify(settings), { expires: 365, secure: true, sameSite: 'strict' });
+            Cookies.set('selectedDataset', selectedDataset, { expires: 365, secure: true, sameSite: 'strict' });
         }
     }, [settings, selectedDataset, cookieConsent]);
 
     useEffect(() => {
         if (cookieConsent === 'all') {
-            Cookies.set('history', JSON.stringify(history), { expires: 365 });
+            Cookies.set('history', JSON.stringify(history), { expires: 365, secure: true, sameSite: 'strict' });
         }
     }, [history, cookieConsent]);
 
