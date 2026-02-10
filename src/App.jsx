@@ -167,6 +167,8 @@ const App = () => {
                     </div>
 
                     <button
+                        id="settings-button"
+                        aria-label="Settings"
                         onClick={() => setShowSettings(!showSettings)}
                         className={`absolute right-0 top-0 p-3 rounded-2xl border transition-all hover:scale-105 active:scale-95 z-[100] animate-premium-in ${showSettings ? 'bg-brand-primary border-brand-primary shadow-lg text-white' : 'bg-brand-surface border-brand-border text-brand-text-muted hover:text-brand-text'
                             }`}
