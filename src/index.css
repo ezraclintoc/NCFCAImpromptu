@@ -1,0 +1,171 @@
+@import "tailwindcss";
+
+@theme {
+    --color-brand-primary: var(--brand-primary);
+    --color-brand-secondary: var(--brand-secondary);
+    --color-brand-bg: var(--brand-bg);
+    --color-brand-text: var(--brand-text);
+    --color-brand-text-muted: var(--brand-text-muted);
+    --color-brand-surface: var(--brand-surface);
+    --color-brand-border: var(--brand-border);
+}
+
+:root {
+    --brand-primary: #6366f1;
+    --brand-secondary: #a855f7;
+    --brand-bg: #020617;
+    --brand-surface: #0f172a;
+    --brand-text: #f8fafc;
+    --brand-text-muted: #94a3b8;
+    --brand-border: rgba(255, 255, 255, 0.1);
+    --transition-speed: 0.5s;
+}
+
+[data-theme='midnight'] {
+    --brand-primary: #3b82f6;
+    --brand-secondary: #2dd4bf;
+    --brand-bg: #010409;
+    --brand-surface: #0a0c10;
+    --brand-text: #f8fafc;
+    --brand-text-muted: #94a3b8;
+    --brand-border: rgba(255, 255, 255, 0.08);
+}
+
+[data-theme='emerald'] {
+    --brand-primary: #10b981;
+    --brand-secondary: #0ea5e9;
+    --brand-bg: #022c22;
+    --brand-surface: #064e3b;
+    --brand-text: #f8fafc;
+    --brand-text-muted: #94a3b8;
+    --brand-border: rgba(255, 255, 255, 0.08);
+}
+
+[data-theme='sunset'] {
+    --brand-primary: #f59e0b;
+    --brand-secondary: #ef4444;
+    --brand-bg: #1c0c0c;
+    --brand-surface: #2d1a1a;
+    --brand-text: #f8fafc;
+    --brand-text-muted: #94a3b8;
+    --brand-border: rgba(255, 255, 255, 0.08);
+}
+
+[data-theme='milk'] {
+    --brand-primary: #4f46e5;
+    --brand-secondary: #9333ea;
+    --brand-bg: #ffffff;
+    --brand-surface: #f1f5f9;
+    --brand-text: #0f172a;
+    --brand-text-muted: #64748b;
+    --brand-border: rgba(15, 23, 42, 0.08);
+}
+
+[data-theme='rose'] {
+    --brand-primary: #fb7185;
+    --brand-secondary: #f472b6;
+    --brand-bg: #111827;
+    --brand-surface: #1f2937;
+    --brand-text: #fff1f2;
+    --brand-text-muted: #fda4af;
+    --brand-border: rgba(251, 113, 133, 0.1);
+}
+
+[data-theme='royal'] {
+    --brand-primary: #8b5cf6;
+    --brand-secondary: #f59e0b;
+    --brand-bg: #1e1b4b;
+    --brand-surface: #312e81;
+    --brand-text: #eef2ff;
+    --brand-text-muted: #a5b4fc;
+    --brand-border: rgba(139, 92, 246, 0.15);
+}
+
+[data-theme='ocean'] {
+    --brand-primary: #0ea5e9;
+    --brand-secondary: #2dd4bf;
+    --brand-bg: #082f49;
+    --brand-surface: #0c4a6e;
+    --brand-text: #f0f9ff;
+    --brand-text-muted: #7dd3fc;
+    --brand-border: rgba(14, 165, 233, 0.15);
+}
+
+[data-theme='forest'] {
+    --brand-primary: #22c55e;
+    --brand-secondary: #84cc16;
+    --brand-bg: #064e3b;
+    --brand-surface: #065f46;
+    --brand-text: #f0fdf4;
+    --brand-text-muted: #86efac;
+    --brand-border: rgba(34, 197, 94, 0.1);
+}
+
+[data-theme='slate'] {
+    --brand-primary: #94a3b8;
+    --brand-secondary: #64748b;
+    --brand-bg: #0f172a;
+    --brand-surface: #1e293b;
+    --brand-text: #f8fafc;
+    --brand-text-muted: #94a3b8;
+    --brand-border: rgba(255, 255, 255, 0.05);
+}
+
+[data-animations='false'] *,
+[data-animations='false']::before,
+[data-animations='false']::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    transition-delay: 0s !important;
+}
+
+body {
+    @apply antialiased;
+    background-color: var(--brand-bg);
+    color: var(--brand-text);
+    transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+.animate-premium-in {
+    animation: premium-in 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes premium-in {
+    from {
+        opacity: 0;
+        transform: translateY(20px) scale(0.98);
+        filter: blur(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+        filter: blur(0);
+    }
+}
+
+.glass-card {
+    background-color: var(--brand-surface);
+    backdrop-filter: blur(24px);
+    border: 1px solid var(--brand-border);
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+}
+
+select,
+option {
+    background-color: var(--brand-surface);
+    color: var(--brand-text);
+}
+
+select {
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='currentColor'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='In-7 7l-7 7 7 7' /%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    background-size: 1em;
+}
+
+[data-theme='milk'] .glass-card {
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
