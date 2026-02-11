@@ -375,101 +375,130 @@ export const datasets = {
     },
     ncfca_apologetics: {
         name: "NCFCA Apologetics",
-        tagline: "Official 2021 NCFCA Apologetics definitions, questions, and analysis prompts.",
+        tagline: "Official NCFCA Apologetics 2025 Release: 48 Doctrinal and 48 Application Questions.",
         topics: {
-            "Cat 1: Existence": [
-                "Explain the meaning and significance of the trinity.",
-                "Explain the meaning and significance of the omniscience of God.",
-                "Explain the meaning and significance of the omnipotence of God.",
-                "Explain the meaning and significance of the omnipresence of God.",
-                "Explain the meaning and significance of the transcendence and immanence of God.",
-                "Explain the meaning and significance of the righteousness of God.",
-                "Explain the meaning and significance of the sovereignty of God.",
-                "Explain the meaning and significance of the grace of God.",
-                "If God is real, why can't people see or touch Him?",
-                "If God is holy, why did He allow evil in the world?",
-                "How can God be both merciful and just?",
-                "Why is the unchanging nature of God critical to who He is?",
-                "Why do bad things happen to good people?",
-                "What is the role of the Holy Spirit?",
-                "Analyze and respond to the statement, \"The Old Testament God is a God of hate while the New Testament God is a God of love.\" — Anonymous",
-                "Analyze and respond to the statement, \"What comes into our minds when we think about God is the most important thing about us.\" — A.W. Tozer",
-                "Analyze and respond to the statement, \"God set the universe in motion but He has no interest in it.\" — Anonymous",
-                "Analyze and respond to the statement, \"As an atheist, I don't believe there is a God.\" — Anonymous"
+            "God": [
+                "Is God triune?",
+                "Is God infinite?",
+                "Is God eternal?",
+                "Does God ever change?",
+                "Does God know everything?",
+                "Is God all-powerful?",
+                "Is God present everywhere?",
+                "Is God sovereign?",
+                "Is God loving?",
+                "Is God holy?",
+                "Is God righteous?",
+                "Is God good?"
             ],
-            "Cat 2: Scriptures": [
-                "Explain the meaning and significance of inerrancy.",
-                "Explain the meaning and significance of verbal, plenary inspiration of Scripture.",
-                "Explain the meaning and significance of divine inspiration.",
-                "Explain the meaning and significance of the biblical canon.",
-                "Jesus clearly demonstrated His belief in the authority of Scriptures. Defend this statement with evidence.",
-                "If the Bible was written by men, how could it also be written by God?",
-                "How can the Bible be trustworthy when it has been translated so many times?",
-                "Is the Old Testament a reliable historical document?",
-                "Is the New Testament a reliable historical document?",
-                "Did the discovery of the Dead Sea Scrolls affirm or deny the accuracy of the Old Testament?",
-                "Why are there parallel myths to the biblical narrative in other religions?",
-                "Are Scripture and Science in conflict?",
-                "Analyze and respond to the statement, \"The Bible is no different than any other holy book.\" — Anonymous",
-                "Analyze and respond to the statement, \"The Bible is simply the work of a great conspiracy, where people sought to create a religion of their own.\" — Anonymous",
-                "Analyze and respond to the statement, \"We can't believe in a Bible that is full of contradictions.\" — Anonymous",
-                "Analyze and respond to the statement, \"It is arrogant to claim to know truth.\" — Anonymous"
+            "Revelation": [
+                "Does God reveal Himself through creation?",
+                "Does God reveal Himself through providence?",
+                "Does God reveal Himself through human conscience?",
+                "Does God reveal Himself through the Bible?",
+                "Is the Bible authoritative?",
+                "Is the Bible inspired?",
+                "Is the Bible inerrant?",
+                "Is the Bible reliable?"
             ],
-            "Cat 3: Nature/Destiny of Man": [
-                "Explain the meaning and significance of the image of God.",
-                "Explain the meaning and significance of the depravity of man.",
-                "Explain the meaning and significance of original sin.",
-                "Explain the meaning and significance of sanctification.",
-                "Explain the meaning and significance of repentance.",
-                "Explain the meaning and significance of regeneration.",
-                "Do all men have a longing for God?",
-                "Do all men have a conscience?",
-                "If man is inherently sinful, why do many men lead relatively good lives?",
-                "What is the purpose of man?",
-                "Why would a loving God create hell?",
-                "What is the purpose of prayer?",
-                "Analyze and respond to the statement, \"All men were born with ten fingers and toes, but no one was born with the knowledge of God.\" — Voltaire",
-                "Analyze and respond to the statement, “If God understands my humanity and sin nature better than I do, why does He still hold me accountable?” — Anonymous",
-                "Analyze and respond to the statement, \"When man dies, he simply ceases to exist. There is no immortality or eternal life.\" — Anonymous",
-                "Analyze and respond to the statement, \"All matter, energy, and life are an interconnected unity of which we are an inseparable part.\" — World Pantheism Movement",
-                "Analyze and respond to the statement, \"Religion is as much a living spring of violence today as it was at any time in the past.\" — Sam Harris",
-                "Analyze and respond to the statement, \"All human beings go through a previous life.\" — Honore Balzac"
+            "Humanity": [
+                "Are all people made in the image of God?",
+                "Do all people have purpose?",
+                "Does the Fall still affect us today?",
+                "Is hell real?"
             ],
-            "Cat 4: Salvation": [
-                "Explain the meaning and significance of justification.",
-                "Explain the meaning and significance of atonement.",
-                "Explain the meaning and significance of redemption.",
-                "Explain the meaning and significance of reconciliation.",
-                "How can a man know God?",
-                "Can a man become right with God by keeping the Ten Commandments?",
-                "Isn't it narrow minded to believe there is only one way to heaven?",
-                "Why does man need salvation?",
-                "What is the purpose of the church?",
-                "How do you know that there is absolute truth?",
-                "Analyze and respond to the statement, \"It doesn't matter what you believe as long as you are sincere.\" — Anonymous",
-                "Analyze and respond to the statement, \"Faith is the great cop-out, the great excuse to evade the need to think and evaluate evidence.\" — Richard Dawkins",
-                "Analyze and respond to the statement, \"I believe I will go to heaven because I have lived a pretty good life.\" — Anonymous",
-                "Analyze and respond to the statement, \"I don't want to be saved because I would need to give up the things I enjoy.\" — Anonymous",
-                "Analyze and respond to the statement, \"I am not sure I want to be a Christian, as Christians are hypocritical, intolerant, and judgmental.\" — Anonymous",
-                "Analyze and respond to the statement, \"I don't need to go to church. I can worship God wherever I am.\" — Anonymous"
+            "Jesus": [
+                "Is Jesus the promised Messiah?",
+                "Is Jesus both God and man?",
+                "Did Jesus come to save us?",
+                "Will Jesus come again?"
             ],
-            "Cat 5: Person of Christ": [
-                "What is the meaning and significance of the deity of Christ?",
-                "What is the meaning and significance of the Incarnation?",
-                "What is the meaning and significance of Jesus as the Mediator?",
-                "What is the meaning and significance of Jesus as the Messiah?",
-                "What is the meaning and significance of Jesus as the Word of God?",
-                "Why is the resurrection essential to the Christian faith?",
-                "If God is infinite, how could He limit Himself in the person of Christ?",
-                "How could Jesus be both God and man?",
-                "Why did Jesus have to die to provide salvation for men?",
-                "What evidence is there for the historical existence of Jesus?",
-                "What evidence is there for the resurrection of Jesus?",
-                "What was the purpose of the miracles that Jesus performed?",
-                "Analyze and respond to the statement, \"Jesus' life and death are merely examples to us that we should all live sacrificial lives.\" — Anonymous",
-                "Analyze and respond to the statement, \"Jesus was a good man and a good teacher, but certainly not the Son of God.\" — Anonymous",
-                "Analyze and respond to the statement, \"Justice has not been served by Jesus' substitutionary atonement.\" — Anonymous",
-                "Analyze and respond to the statement, \"We have much to learn from the Jesus of the Gnostic gospels.\" — Anonymous"
+            "Holy Spirit": [
+                "Does the Holy Spirit guide us to truth?",
+                "Does the Holy Spirit convict us of sin?",
+                "Does the Holy Spirit regenerate us from spiritual death?",
+                "Does the Holy Spirit empower us for service?"
+            ],
+            "Salvation": [
+                "Is the gospel still good news today?",
+                "Is regeneration necessary for salvation?",
+                "Is repentance necessary for salvation?",
+                "Is faith in Christ necessary for salvation?",
+                "Is justification a gift?",
+                "Can we be reconciled to God?",
+                "Can believers grow in holiness?",
+                "Will true believers go to heaven?"
+            ],
+            "Christian Life": [
+                "Is Bible study important for a Christian?",
+                "Is prayer important for a Christian?",
+                "Is rest important for a Christian?",
+                "Is confessing sin important for a Christian?",
+                "Is church involvement important for a Christian?",
+                "Is worship important for a Christian?",
+                "Is serving others important for a Christian?",
+                "Is stewardship important for a Christian?"
+            ],
+            "Application: God": [
+                "How do you know God exists?",
+                "If God is good, why is there so much evil in the world?",
+                "If God is loving, how can He send people to hell?",
+                "If God is all-powerful, why doesn’t He end human suffering?",
+                "Is the Old Testament God different from the New Testament God?",
+                "Do all religions ultimately point to God?",
+                "Do Christians worship three Gods?",
+                "Does God endorse violence?"
+            ],
+            "Application: Revelation": [
+                "Is truth relative?",
+                "Is the Bible irrelevant?",
+                "Is the Bible full of contradictions?",
+                "Is the Bible homophobic?",
+                "Does science contradict the Bible?",
+                "How can I trust the Bible when there are so many different interpretations?",
+                "How can I know God's plan for my life?"
+            ],
+            "Application: Humanity": [
+                "Will I go to heaven if I live a good life?",
+                "Why can't I just live the way I want?",
+                "If it's my body, isn't it my choice?",
+                "Does my life really matter?"
+            ],
+            "Application: Jesus": [
+                "Is Jesus any different from other religious leaders?",
+                "Why did Jesus need to die on a cross for our sins?",
+                "Is there any evidence that Jesus actually existed?",
+                "Did Jesus fulfill Old Testament prophecies?"
+            ],
+            "Application: Holy Spirit": [
+                "If we have the Holy Spirit, why do we need the Bible?",
+                "Is the Holy Spirit reserved for super Christians?",
+                "Does every believer have a spiritual gift?",
+                "Is it possible to hinder the Holy Spirit?"
+            ],
+            "Application: Salvation": [
+                "Will God condemn a person who has never heard about Jesus?",
+                "If I’m a good person, will I go to heaven?",
+                "Why does it matter what I believe as long as I'm sincere?",
+                "Does God forgive really big sins?",
+                "If Christians are saved, then why are they still messed up?",
+                "If I accept Jesus as Savior, can I sin all I want?",
+                "If I’m still struggling with sin, am I really saved?",
+                "Can I lose my salvation?"
+            ],
+            "Application: Christian Life": [
+                "Does God care if I am involved in a local church as long as I pray and read my Bible?",
+                "Why doesn’t God answer my prayers?",
+                "Can I forgive someone who hurt me?",
+                "Why are Christians so judgmental?",
+                "Why do Christians live lives that look no different than non-Christians?",
+                "Is Christianity responsible for oppression and injustice?",
+                "Does God care about my entertainment choices?",
+                "Should Christians be tolerant?",
+                "Is Christianity just a psychological crutch?",
+                "Does God care about my money?",
+                "How can I overcome my sinful habits?",
+                "Should a Christian engage in politics?"
             ]
         }
     }
