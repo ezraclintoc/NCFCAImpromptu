@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://impromptu.clintoc.me/sitemap.xml
