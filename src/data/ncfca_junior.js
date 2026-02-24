@@ -1,0 +1,28 @@
+export const ncfca_junior = {
+    name: "NCFCA Junior",
+    tagline: "Simplified and fun topics perfect for younger Impromptu speakers.",
+    topics: {
+        "Junior Topics": [
+            "If you had a time machine, where would you go?",
+            "Tell us about one of your best friends",
+            "Tell us about your favorite book character",
+            "When was a time you did something scary?",
+            "What is the most interesting thing you've learned?",
+            "What would you do if every day was a snow day?",
+            "What does it mean to be yourself?",
+            "What is something you have done that you are proud of?",
+            "What would you do if you found three kittens on your doorstep?",
+            "What would you do if you were President?",
+            "Describe a happy memory from a long time ago",
+            "What is your greatest fear, and how can you overcome it?",
+            "Describe someone you admire",
+            "Tell us about a story you have written",
+            "What will you be like when you are grown up?",
+            "Make up a story about a puppy who gets lost",
+            "Describe your dream house",
+            "If you could make three wishes, what would they be, and why?",
+            "Joy", "Fun", "Fear", "Forgive", "Annoyance", "Patience",
+            "Bravery", "Love", "Forever", "Friendship", "Give up", "Danger"
+        ]
+    }
+};

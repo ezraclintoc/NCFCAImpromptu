@@ -1,6 +1,27 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, memo } from 'react';
 
-const Timer = ({ mode, onComplete, autoStart = false, initialTime = 120 }) => {
+const Timer = ({ mode, onComplete, autoStart = false, initialTime = 120, buzz = false }) => {
+    const playBeep = () => {
+        try {
+            const AudioContext = window.AudioContext || window.webkitAudioContext;
+            if (!AudioContext) return;
+            const ctx = new AudioContext();
+            const osc = ctx.createOscillator();
+            const gain = ctx.createGain();
+            osc.type = 'sine';
+            osc.frequency.setValueAtTime(440, ctx.currentTime);
+            gain.gain.setValueAtTime(0, ctx.currentTime);
+            gain.gain.linearRampToValueAtTime(0.5, ctx.currentTime + 0.05);
+            gain.gain.linearRampToValueAtTime(0, ctx.currentTime + 0.2);
+            osc.connect(gain);
+            gain.connect(ctx.destination);
+            osc.start();
+            osc.stop(ctx.currentTime + 0.2);
+        } catch (e) {
+            console.warn("Audio alert failed:", e);
+        }
+    };
+
     const [time, setTime] = useState(mode === 'speech' ? 0 : initialTime);
     const [isRunning, setIsRunning] = useState(false);
     const timerRef = useRef(null);
@@ -30,6 +51,14 @@ const Timer = ({ mode, onComplete, autoStart = false, initialTime = 120 }) => {
                         if (prev <= 1) {
                             clearInterval(timerRef.current);
                             setIsRunning(false);
+                            if (buzz && initialTime > 0) {
+                                playBeep();
+                                try {
+                                    navigator.vibrate?.(200);
+                                } catch (e) {
+                                    console.warn("Vibration failed:", e);
+                                }
+                            }
                             onComplete?.();
                             return 0;
                         }
@@ -54,7 +83,7 @@ const Timer = ({ mode, onComplete, autoStart = false, initialTime = 120 }) => {
 
     return (
         <div className="flex flex-col items-center gap-4">
-            <div className={`text-7xl font-mono font-bold transition-colors ${mode === 'prep' && time < 15 ? 'text-red-500 animate-pulse' : 'text-brand-text'
+            <div className={`text-7xl font-mono font-bold transition-colors ${(mode === 'prep' && time < 15) || (mode === 'speech' && time >= initialTime - 10) ? 'text-red-500 animate-pulse' : 'text-brand-text'
                 }`}>
                 {formatTime(time)}
             </div>
@@ -94,4 +123,4 @@ const Timer = ({ mode, onComplete, autoStart = false, initialTime = 120 }) => {
     );
 };
 
-export default Timer;
+export default memo(Timer);

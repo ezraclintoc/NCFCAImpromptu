@@ -129,6 +129,7 @@ body {
 
 .animate-premium-in {
     animation: premium-in 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    will-change: transform, opacity, filter;
 }
 
 @keyframes premium-in {
@@ -150,6 +151,7 @@ body {
     backdrop-filter: blur(24px);
     border: 1px solid var(--brand-border);
     box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+    will-change: backdrop-filter;
 }
 
 select,

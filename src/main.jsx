@@ -5,7 +5,14 @@ import './index.css'
 
 import ErrorBoundary from './components/ErrorBoundary.jsx'
 
-ReactDOM.createRoot(document.getElementById('root')).render(
+const rootElement = document.getElementById('root');
+const root = ReactDOM.createRoot(rootElement);
+
+// Remove skeleton
+const skeleton = document.getElementById('root-skeleton');
+if (skeleton) skeleton.remove();
+
+root.render(
     <React.StrictMode>
         <ErrorBoundary>
             <App />
