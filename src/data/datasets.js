@@ -11,9 +11,14 @@ export const datasetManifest = {
         loader: () => import('./ncfca_junior.js').then(m => m.ncfca_junior)
     },
     ncfca_apologetics: {
-        name: "NCFCA Apologetics",
-        tagline: "Official NCFCA Apologetics 2025 Release: 48 Doctrinal and 48 Application Questions.",
+        name: "Apologetics Doctrinal",
+        tagline: "Official NCFCA Apologetics 2025 Release: 48 Doctrinal Questions.",
         loader: () => import('./ncfca_apologetics.js').then(m => m.ncfca_apologetics)
+    },
+    ncfca_apologetics_applicational: {
+        name: "Apologetics Applicational",
+        tagline: "Official NCFCA Apologetics 2025 Release: 47 Application Questions.",
+        loader: () => import('./ncfca_apologetics_applicational.js').then(m => m.ncfca_apologetics_applicational)
     },
 };
 

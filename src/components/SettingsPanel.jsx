@@ -101,8 +101,28 @@ const SettingsPanel = ({
                                     }}
                                     className="px-3 py-2 bg-brand-text/5 hover:bg-brand-text/10 text-brand-text/80 text-xs rounded-lg transition-colors border border-brand-border"
                                 >
-                                    NCFCA Apologetics
+                                    Apologetics Doctrinal
                                     <span className="block text-[9px] opacity-50 font-normal mt-0.5">4m Prep / 6m Speak</span>
+                                </button>
+                                <button
+                                    onClick={() => {
+                                        setSettings(s => ({ ...s, prepTime: 240, speakingTime: 360 }));
+                                        setSelectedDataset('ncfca_apologetics_applicational');
+                                    }}
+                                    className="px-3 py-2 bg-brand-text/5 hover:bg-brand-text/10 text-brand-text/80 text-xs rounded-lg transition-colors border border-brand-border"
+                                >
+                                    Apologetics Applicational
+                                    <span className="block text-[9px] opacity-50 font-normal mt-0.5">4m Prep / 6m Speak</span>
+                                </button>
+                                <button
+                                    onClick={() => {
+                                        setSettings(s => ({ ...s, prepTime: 120, speakingTime: 180 }));
+                                        setSelectedDataset('ncfca_junior');
+                                    }}
+                                    className="px-3 py-2 bg-brand-text/5 hover:bg-brand-text/10 text-brand-text/80 text-xs rounded-lg transition-colors border border-brand-border"
+                                >
+                                    NCFCA Junior
+                                    <span className="block text-[9px] opacity-50 font-normal mt-0.5">2m Prep / 3m Speak</span>
                                 </button>
                             </div>
                         </div>
