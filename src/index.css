@@ -11,14 +11,26 @@
 }
 
 :root {
-    --brand-primary: #6366f1;
-    --brand-secondary: #a855f7;
-    --brand-bg: #020617;
-    --brand-surface: #0f172a;
-    --brand-text: #f8fafc;
-    --brand-text-muted: #94a3b8;
-    --brand-border: rgba(255, 255, 255, 0.1);
+    --brand-primary: #073763;
+    --brand-secondary: #2179b9;
+    --brand-accent: #c44f4f;
+    --brand-bg: #f0f4f8;
+    --brand-surface: #ffffff;
+    --brand-text: #0d1b2a;
+    --brand-text-muted: #4a6080;
+    --brand-border: rgba(7, 55, 99, 0.12);
     --transition-speed: 0.5s;
+}
+
+[data-theme='ncfca-dark'] {
+    --brand-primary: #4fa8e0;
+    --brand-secondary: #2179b9;
+    --brand-accent: #e07070;
+    --brand-bg: #050f1a;
+    --brand-surface: #0a1929;
+    --brand-text: #e8f0f8;
+    --brand-text-muted: #7aa0c0;
+    --brand-border: rgba(33, 121, 185, 0.18);
 }
 
 [data-theme='midnight'] {
@@ -29,6 +41,7 @@
     --brand-text: #f8fafc;
     --brand-text-muted: #94a3b8;
     --brand-border: rgba(255, 255, 255, 0.08);
+    --brand-accent: #2dd4bf;
 }
 
 [data-theme='emerald'] {
@@ -124,7 +137,12 @@ body {
     @apply antialiased;
     background-color: var(--brand-bg);
     color: var(--brand-text);
+    font-family: 'Poppins', ui-sans-serif, system-ui, -apple-system, sans-serif;
     transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'PT Serif', Georgia, 'Times New Roman', serif;
 }
 
 .animate-premium-in {
@@ -150,7 +168,7 @@ body {
     background-color: var(--brand-surface);
     backdrop-filter: blur(24px);
     border: 1px solid var(--brand-border);
-    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 4px 24px rgba(7, 55, 99, 0.1), 0 1px 4px rgba(7, 55, 99, 0.06);
     will-change: backdrop-filter;
 }
 
@@ -166,6 +184,18 @@ select {
     background-repeat: no-repeat;
     background-position: right 1rem center;
     background-size: 1em;
+}
+
+[data-theme='ncfca-dark'] .glass-card,
+[data-theme='midnight'] .glass-card,
+[data-theme='emerald'] .glass-card,
+[data-theme='sunset'] .glass-card,
+[data-theme='rose'] .glass-card,
+[data-theme='royal'] .glass-card,
+[data-theme='ocean'] .glass-card,
+[data-theme='forest'] .glass-card,
+[data-theme='slate'] .glass-card {
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
 }
 
 [data-theme='milk'] .glass-card {

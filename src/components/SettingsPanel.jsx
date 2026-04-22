@@ -237,16 +237,8 @@ const SettingsPanel = ({
                             <span className="text-xs font-bold text-brand-text-muted uppercase tracking-widest block mb-1">Color Theme</span>
                             <div className="grid grid-cols-2 gap-3">
                                 {[
-                                    { id: 'sleek', name: 'Sleek Dark', primary: 'bg-indigo-500', bg: 'bg-slate-950' },
-                                    { id: 'midnight', name: 'Midnight', primary: 'bg-blue-500', bg: 'bg-black' },
-                                    { id: 'emerald', name: 'Emerald', primary: 'bg-emerald-500', bg: 'bg-teal-950' },
-                                    { id: 'sunset', name: 'Sunset', primary: 'bg-orange-500', bg: 'bg-red-950' },
-                                    { id: 'milk', name: 'Milk', primary: 'bg-indigo-600', bg: 'bg-white' },
-                                    { id: 'rose', name: 'Rose', primary: 'bg-rose-400', bg: 'bg-gray-900' },
-                                    { id: 'royal', name: 'Royal', primary: 'bg-violet-500', bg: 'bg-indigo-950' },
-                                    { id: 'ocean', name: 'Ocean', primary: 'bg-sky-500', bg: 'bg-blue-950' },
-                                    { id: 'forest', name: 'Forest', primary: 'bg-green-500', bg: 'bg-emerald-950' },
-                                    { id: 'slate', name: 'Slate', primary: 'bg-slate-400', bg: 'bg-slate-900' }
+                                    { id: 'sleek', name: 'NCFCA', primary: 'bg-blue-700', bg: 'bg-blue-50' },
+                                    { id: 'ncfca-dark', name: 'NCFCA Dark', primary: 'bg-blue-400', bg: 'bg-blue-950' },
                                 ].map(t => (
                                     <button
                                         key={t.id}

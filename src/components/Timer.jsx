@@ -113,7 +113,7 @@ const Timer = ({ mode, onComplete, autoStart = false, initialTime = 120, buzz = 
                             setIsRunning(false);
                             onComplete?.();
                         }}
-                        className="px-6 py-2 rounded-full bg-slate-800 text-slate-300 hover:bg-slate-700 transition-all font-medium"
+                        className="px-6 py-2 rounded-full bg-brand-text/10 hover:bg-brand-text/20 text-brand-text-muted hover:text-brand-text transition-all font-medium"
                     >
                         Skip Prep
                     </button>
