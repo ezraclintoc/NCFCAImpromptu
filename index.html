@@ -12,7 +12,10 @@
   <meta name="keywords"
     content="NCFCA, Impromptu, Apologetics, Speech and Debate, Forensics, Capital Forensics Club, CFC, Practice Tool, Speech Timer" />
   <meta name="author" content="Ezra" />
-  <meta name="theme-color" content="#6366f1" />
+  <meta name="theme-color" content="#073763" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=PT+Serif:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet" />
 
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website" />
@@ -38,20 +41,30 @@
         const saved = document.cookie.split('; ').find(row => row.startsWith('settings='));
         if (saved) {
           const settings = JSON.parse(decodeURIComponent(saved.split('=')[1]));
-          if (settings.theme) document.documentElement.setAttribute('data-theme', settings.theme);
+          const validThemes = ['sleek', 'ncfca-dark'];
+          const theme = validThemes.includes(settings.theme) ? settings.theme : 'sleek';
+          document.documentElement.setAttribute('data-theme', theme);
         }
       } catch (e) { }
     })();
   </script>
   <style>
     :root {
-      --brand-primary: #6366f1;
-      --brand-secondary: #a855f7;
-      --brand-bg: #020617;
-      --brand-surface: #0f172a;
-      --brand-text: #f8fafc;
-      --brand-text-muted: #94a3b8;
-      --brand-border: rgba(255, 255, 255, 0.1);
+      --brand-primary: #073763;
+      --brand-secondary: #2179b9;
+      --brand-accent: #c44f4f;
+      --brand-bg: #f0f4f8;
+      --brand-surface: #ffffff;
+      --brand-text: #0d1b2a;
+      --brand-text-muted: #4a6080;
+      --brand-border: rgba(7, 55, 99, 0.12);
+    }
+
+    [data-theme='ncfca-dark'] {
+      --brand-primary: #4fa8e0;
+      --brand-secondary: #2179b9;
+      --brand-bg: #050f1a;
+      --brand-text: #e8f0f8;
     }
 
     [data-theme='midnight'] {
@@ -112,7 +125,7 @@
     body {
       background: var(--brand-bg);
       margin: 0;
-      font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+      font-family: 'Poppins', ui-sans-serif, system-ui, -apple-system, sans-serif;
       overflow-x: hidden;
       color: var(--brand-text);
     }
@@ -136,12 +149,9 @@
     }
 
     .sk-title {
-      font-size: 3rem;
-      font-weight: 800;
-      background: linear-gradient(to right, var(--brand-primary), var(--brand-secondary));
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
+      font-size: clamp(2.5rem, 8vw, 4.5rem);
+      font-weight: 700;
+      color: var(--brand-primary);
       margin-bottom: 0.5rem;
       text-align: center;
     }
@@ -180,11 +190,11 @@
       }
     }
   </style>
-  <script type="module" crossorigin src="./assets/index-ClDwE-Ew.js"></script>
-  <link rel="modulepreload" crossorigin href="./assets/ui-CZl4EbeW.js">
-  <link rel="modulepreload" crossorigin href="./assets/react-core-BsXak0nh.js">
+  <script type="module" crossorigin src="./assets/index--YUEexUT.js"></script>
+  <link rel="modulepreload" crossorigin href="./assets/ui-DccEFsxF.js">
+  <link rel="modulepreload" crossorigin href="./assets/react-core-Cwpilzel.js">
   <link rel="modulepreload" crossorigin href="./assets/vendor-BXEMiIsG.js">
-  <link rel="stylesheet" crossorigin href="./assets/index-CUwxtdiO.css">
+  <link rel="stylesheet" crossorigin href="./assets/index-BxFlu-bL.css">
 </head>
 
 <body>
