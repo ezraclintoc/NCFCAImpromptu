@@ -83,16 +83,16 @@ const Timer = ({ mode, onComplete, autoStart = false, initialTime = 120, buzz = 
 
     return (
         <div className="flex flex-col items-center gap-4">
-            <div className={`text-7xl font-mono font-bold transition-colors ${(mode === 'prep' && time < 15) || (mode === 'speech' && time >= initialTime - 10) ? 'text-red-500 animate-pulse' : 'text-brand-text'
+            <div className={`text-8xl font-black tabular-nums tracking-tight transition-colors ${(mode === 'prep' && time < 15) || (mode === 'speech' && time >= initialTime - 10) ? 'text-red-500 animate-pulse' : 'text-brand-text'
                 }`}>
                 {formatTime(time)}
             </div>
             <div className="flex gap-4">
                 <button
                     onClick={() => setIsRunning(!isRunning)}
-                    className={`px-6 py-2 rounded-full font-semibold transition-all ${isRunning
+                    className={`px-6 py-3 rounded-full font-semibold transition-colors ${isRunning
                         ? 'bg-brand-text/10 hover:bg-brand-text/20 text-brand-text'
-                        : 'bg-brand-primary hover:bg-brand-primary/90 text-white shadow-lg shadow-brand-primary/20'
+                        : 'bg-brand-primary hover:bg-brand-primary/90 text-white'
                         }`}
                 >
                     {isRunning ? 'Pause' : 'Start'}
@@ -102,7 +102,7 @@ const Timer = ({ mode, onComplete, autoStart = false, initialTime = 120, buzz = 
                         setIsRunning(false);
                         setTime(mode === 'speech' ? 0 : initialTime);
                     }}
-                    className="px-6 py-2 rounded-full border border-brand-border text-brand-text-muted hover:text-brand-text hover:border-brand-text/30 transition-all font-medium"
+                    className="px-6 py-3 rounded-full border border-brand-border text-brand-text-muted hover:text-brand-text hover:border-brand-text/30 transition-colors font-medium"
                 >
                     Reset
                 </button>
@@ -113,7 +113,7 @@ const Timer = ({ mode, onComplete, autoStart = false, initialTime = 120, buzz = 
                             setIsRunning(false);
                             onComplete?.();
                         }}
-                        className="px-6 py-2 rounded-full bg-brand-text/10 hover:bg-brand-text/20 text-brand-text-muted hover:text-brand-text transition-all font-medium"
+                        className="px-6 py-3 rounded-full bg-brand-text/10 hover:bg-brand-text/20 text-brand-text-muted hover:text-brand-text transition-colors font-medium"
                     >
                         Skip Prep
                     </button>

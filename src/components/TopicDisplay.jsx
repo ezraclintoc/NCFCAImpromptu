@@ -13,14 +13,14 @@ const TopicDisplay = ({
     return (
         <div className="w-full max-w-3xl flex flex-col items-center text-center animate-premium-in">
             <div className="mb-12 w-full space-y-6">
-                {currentTopics.map((topic, idx) => {
+                {currentTopics.map((topic) => {
                     const isQuote = topic.category === 'Quotes' || topic.category.includes('Quotes');
                     return (
-                        <div key={idx} className="transition-all duration-500 scale-100 opacity-100">
+                        <div key={topic.text}>
                             <span className="inline-block px-3 py-1 rounded-full text-xs font-bold tracking-wider uppercase mb-3 border bg-brand-primary/20 text-brand-primary/80 border-brand-primary/30">
                                 {topic.category}
                             </span>
-                            <h2 className={`text-2xl md:text-3xl leading-snug text-brand-text ${isQuote ? 'font-serif italic' : 'font-sans font-medium'}`}>
+                            <h2 className={`text-3xl md:text-4xl xl:text-5xl leading-tight text-brand-text font-bold ${isQuote ? 'italic' : ''}`}>
                                 {isQuote && '"'}{topic.text}{isQuote && '"'}
                             </h2>
                         </div>
@@ -28,7 +28,7 @@ const TopicDisplay = ({
                 })}
             </div>
 
-            <div className="w-full bg-brand-surface backdrop-blur-xl border border-brand-border p-12 rounded-[3rem] shadow-2xl mb-8">
+            <div className="w-full bg-brand-surface border border-brand-border p-10 rounded-2xl shadow-md mb-8">
                 <span className="text-sm font-bold text-brand-text-muted uppercase tracking-widest mb-4 block">
                     {timerMode === 'prep' ? 'Preparation Time' : 'Speaking Time'}
                 </span>

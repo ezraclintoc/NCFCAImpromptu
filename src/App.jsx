@@ -58,7 +58,11 @@ const App = () => {
         if (savedSettings) {
             try {
                 const parsed = JSON.parse(savedSettings);
-                return { ...defaultSettings, ...parsed };
+                const merged = { ...defaultSettings, ...parsed };
+                if (!['sleek', 'ncfca-dark'].includes(merged.theme)) {
+                    merged.theme = 'sleek';
+                }
+                return merged;
             } catch (e) {
                 console.error("Failed to parse settings cookie:", e);
             }
@@ -175,45 +179,24 @@ const App = () => {
         setCurrentTopics([]);
     }, [addToHistory]);
 
-    // Loader UI
-    const LoadingPlaceholder = () => (
-        <div className="flex flex-col items-center justify-center p-12 space-y-4 animate-pulse">
-            <div className="w-12 h-12 rounded-full border-4 border-brand-primary border-t-transparent animate-spin" />
-            <p className="text-brand-text-muted text-sm font-medium">Loading Topics...</p>
-        </div>
-    );
-
     return (
         <div
             className="min-h-screen bg-brand-bg text-brand-text font-sans selection:bg-brand-primary/30 transition-colors duration-500 flex flex-col"
         >
-            {/* Background Decor */}
-            <div className="fixed inset-0 overflow-hidden pointer-events-none">
-                <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-brand-primary/10 blur-[120px] rounded-full will-change-[filter]" />
-                <div className="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-brand-secondary/10 blur-[120px] rounded-full will-change-[filter]" />
-            </div>
-
             <main className="relative z-10 max-w-4xl mx-auto px-6 py-12 flex flex-col items-center flex-1 w-full">
                 <header className="mb-12 text-center w-full relative z-10">
                     <div className="animate-premium-in">
-                        <h1 className="text-5xl font-extrabold tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-brand-primary to-brand-secondary mb-2">
+                        <h1 className="text-5xl sm:text-6xl md:text-7xl font-bold tracking-tight text-brand-primary mb-3">
                             NCFCA Impromptu
                         </h1>
-                        <div className="flex items-center justify-center gap-2">
-                            <p className="text-brand-text-muted text-lg">Practice like a champion.</p>
-                            <button
-                                onClick={() => setShowAbout(true)}
-                                className="p-1.5 rounded-full hover:bg-brand-text/5 text-brand-text-muted hover:text-brand-text transition-colors"
-                                title="About"
-                            >
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10" /><path d="M12 16v-4" /><path d="M12 8h.01" /></svg>
-                            </button>
-                        </div>
+                        <p className="text-brand-text-muted text-xs tracking-[0.2em] uppercase">Practice like a champion.</p>
                     </div>
 
                     <button
                         id="settings-button"
                         aria-label="Settings"
+                        aria-expanded={showSettings}
+                        aria-controls="settings-panel"
                         onClick={() => setShowSettings(!showSettings)}
                         className={`absolute right-0 top-0 p-3 rounded-2xl border transition-all hover:scale-105 active:scale-95 z-[90] animate-premium-in ${showSettings ? 'bg-brand-primary border-brand-primary shadow-lg text-white' : 'bg-brand-surface border-brand-border text-brand-text-muted hover:text-brand-text'
                             }`}
@@ -256,7 +239,7 @@ const App = () => {
                                     ) : (
                                         <>
                                             <span>{topicsData ? Object.keys(topicsData).length : 0} Categories</span>
-                                            <span className="opacity-20">|</span>
+                                            <span className="opacity-20" aria-hidden="true">|</span>
                                             <span>{settings.promptAmount} {settings.promptAmount === 1 ? 'Prompt' : 'Prompts'}</span>
                                         </>
                                     )}
@@ -266,17 +249,13 @@ const App = () => {
                             <button
                                 onClick={generateTopics}
                                 disabled={loadingDataset}
-                                className={`group relative px-12 py-6 bg-brand-primary hover:bg-brand-primary/90 text-white rounded-[2.5rem] transition-all shadow-2xl hover:shadow-brand-primary/40 active:scale-95 ${loadingDataset ? 'opacity-50 cursor-not-allowed' : ''}`}
+                                className={`relative w-full sm:w-auto px-8 py-5 sm:px-14 sm:py-7 bg-brand-primary hover:bg-brand-primary/90 text-white rounded-2xl transition-all shadow-xl hover:shadow-2xl hover:shadow-brand-primary/30 active:scale-95 ${loadingDataset ? 'opacity-50 cursor-not-allowed' : ''}`}
                             >
-                                <span className="relative z-10 text-2xl font-bold tracking-tight">
+                                <span className="text-2xl font-bold tracking-wide">
                                     {loadingDataset ? 'Loading...' : 'Generate Prompts'}
                                 </span>
-                                <div className="absolute inset-0 bg-gradient-to-r from-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity blur-xl rounded-full" />
                             </button>
 
-                            <p className="mt-8 text-brand-text-muted text-sm italic">
-                                {loadingDataset ? 'Updating topics library...' : `Drawing from ${Object.keys(categories).filter(c => categories[c]).length} active categories`}
-                            </p>
                         </div>
                     )}
 
@@ -292,12 +271,12 @@ const App = () => {
                 </div>
             </main>
 
-            <footer className={`relative z-20 w-full max-w-4xl mx-auto px-6 py-8 border-t border-brand-border/50 text-center transition-all duration-300 ${showSettings ? 'blur-sm pointer-events-none' : ''}`}>
+            <footer aria-hidden={showSettings} className={`relative z-20 w-full max-w-4xl mx-auto px-6 py-8 border-t border-brand-border/50 text-center transition-[filter,opacity] duration-300 ${showSettings ? 'blur-sm pointer-events-none' : ''}`}>
                 <div className="flex flex-col items-center gap-4">
                     <div className="flex gap-6">
                         <button
                             onClick={() => setShowAbout(true)}
-                            className="text-xs font-bold uppercase tracking-widest text-brand-text-muted hover:text-brand-primary transition-colors"
+                            className="text-xs font-bold uppercase tracking-widest text-brand-text-muted hover:text-brand-primary transition-colors py-2 px-1"
                         >
                             About
                         </button>
@@ -305,18 +284,18 @@ const App = () => {
                             href="https://github.com/ezraclintoc/NCFCAImpromptu"
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="text-xs font-bold uppercase tracking-widest text-brand-text-muted hover:text-brand-primary transition-colors"
+                            className="text-xs font-bold uppercase tracking-widest text-brand-text-muted hover:text-brand-primary transition-colors py-2 px-1"
                         >
                             Source
                         </a>
                         <button
                             onClick={() => setShowConsentManager(true)}
-                            className="text-xs font-bold uppercase tracking-widest text-brand-text-muted hover:text-brand-primary transition-colors"
+                            className="text-xs font-bold uppercase tracking-widest text-brand-text-muted hover:text-brand-primary transition-colors py-2 px-1"
                         >
                             Privacy
                         </button>
                     </div>
-                    <p className="text-[10px] text-brand-text-muted/50 uppercase tracking-[0.2em]">
+                    <p className="text-[10px] text-brand-text-muted uppercase tracking-[0.2em]">
                         &copy; {new Date().getFullYear()} NCFCA Practice Tool
                     </p>
                 </div>

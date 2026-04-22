@@ -41,7 +41,9 @@
         const saved = document.cookie.split('; ').find(row => row.startsWith('settings='));
         if (saved) {
           const settings = JSON.parse(decodeURIComponent(saved.split('=')[1]));
-          if (settings.theme) document.documentElement.setAttribute('data-theme', settings.theme);
+          const validThemes = ['sleek', 'ncfca-dark'];
+          const theme = validThemes.includes(settings.theme) ? settings.theme : 'sleek';
+          document.documentElement.setAttribute('data-theme', theme);
         }
       } catch (e) { }
     })();
@@ -147,12 +149,9 @@
     }
 
     .sk-title {
-      font-size: 3rem;
-      font-weight: 800;
-      background: linear-gradient(to right, var(--brand-primary), var(--brand-secondary));
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
+      font-size: clamp(2.5rem, 8vw, 4.5rem);
+      font-weight: 700;
+      color: var(--brand-primary);
       margin-bottom: 0.5rem;
       text-align: center;
     }
